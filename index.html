@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FODA Hospital Mercante</title>
+    <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="logo_hospital.png" alt="Logo del Hospital" class="logo">
+        <br><br><br><br><br><br>
+        
+        <div>
+            <h1>Hospital Gdor. Domingo Mercante</h1>
+            <h2>Analisis F.O.D.A</h2>
+        </div>
+        <img src="logo_provincia.png" alt="Logo de la Provincia de Buenos Aires" class="logo-right">
+    </header>
+
+    <main>
+
+        <div>
+        <canvas id="nubeCanvas" width="1800" height="1600"></canvas>
+        <div id="nubeEtiquetas">
+            <a href="fortalezas.html" data-weight="600" target="_blank" style="color: #a101af;">Fortalezas</a>
+            <a href="oportunidades.html" data-weight="600" target="_blank" style="color: #ee2be4;">Oportunidades</a>
+            <a href="debilidades.html" data-weight="600" style="color: #4f2cec;">Debilidades</a>
+            <a href="amenazas.html" data-weight="600" style="color: #ab03cc;">Amenazas</a>
+            <a href="#" data-weight="160" style="color: #3ea2ff;">Analisis</a>
+            <a href="#" data-weight="100" style="color: #ff33ee;">FODA</a>
+            
+        </div>
+
+    </div>
+
+    <script>
+    function iniciarNube() {
+        const canvas = document.getElementById("nubeCanvas");
+
+        if (!canvas || canvas.width === 0 || canvas.height === 0) {
+            setTimeout(iniciarNube, 100); // Reintenta hasta que el canvas esté listo
+            return;
+        }
+
+        try {
+            TagCanvas.Start("nubeCanvas", "nubeEtiquetas", {
+                textColour: null,
+                outlineColour: "#ffcc00",
+                reverse: true,
+                depth: 0.8,
+                maxSpeed: 0.05,
+                weight: true,
+                weightFrom: "data-weight", // Indica el atributo que define el peso
+                shape: "sphere",
+                zoom: 1.2,
+                shuffleTags: true
+            });
+        } catch (e) {
+            console.error("Error al iniciar TagCanvas: ", e);
+            alert("Error al iniciar TagCanvas: " + e.message);
+        }
+    }
+
+    window.onload = function() {
+        setTimeout(iniciarNube, 300); // Retrasa la inicialización para asegurar carga completa
+    };
+    </script>
+
+    </main>
+
+    <footer>
+        <img src="imagen_paisaje_footer_2024.png" alt="Logo de la Provincia de Buenos Aires" class="footer-logo">
+    </footer>
+</body>
+</html>

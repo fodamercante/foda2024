@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FODA Hospital Mercante</title>
+    <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="logo_hospital.png" alt="Logo del Hospital" class="logo">
+        <br><br><br><br><br><br>
+        
+        <div>
+            <h1>Hospital Gdor. Domingo Mercante</h1>
+            <h2>AMENAZAS</h2>
+        </div>
+        <img src="logo_provincia.png" alt="Logo de la Provincia de Buenos Aires" class="logo-right">
+    </header>
+
+    <main>
+
+        <div>
+        <canvas id="nubeCanvas" width="1800" height="1600"></canvas>
+        <div id="nubeEtiquetas">
+            <a href="#" data-weight="200">Amenazas</a>
+            <a href="#" data-weight="200">Amenazas</a>
+            <a href="#" data-weight="160">Amenazas</a>
+            <a href="#" data-weight="140">Amenazas</a>
+            <a href="#" data-weight="100">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="80">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+            <a href="#" data-weight="60">Amenazas</a>
+        </div>
+
+    </div>
+
+    <script>
+    function iniciarNube() {
+        const canvas = document.getElementById("nubeCanvas");
+
+        if (!canvas || canvas.width === 0 || canvas.height === 0) {
+            setTimeout(iniciarNube, 100); // Reintenta hasta que el canvas esté listo
+            return;
+        }
+
+        try {
+            TagCanvas.Start("nubeCanvas", "nubeEtiquetas", {
+                textColour: "#336699",
+                outlineColour: "#ffcc00",
+                reverse: true,
+                depth: 0.8,
+                maxSpeed: 0.05,
+                weight: true,
+                weightFrom: "data-weight", // Indica el atributo que define el peso
+                shape: "sphere",
+                zoom: 1.2,
+                shuffleTags: true
+            });
+        } catch (e) {
+            console.error("Error al iniciar TagCanvas: ", e);
+            alert("Error al iniciar TagCanvas: " + e.message);
+        }
+    }
+
+    window.onload = function() {
+        setTimeout(iniciarNube, 300); // Retrasa la inicialización para asegurar carga completa
+    };
+    </script>
+
+    </main>
+
+    <footer>
+        <img src="imagen_paisaje_footer_2024.png" alt="Logo de la Provincia de Buenos Aires" class="footer-logo">
+    </footer>
+</body>
+</html>

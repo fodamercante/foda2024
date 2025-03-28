@@ -1,0 +1,228 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    background-image: url('header-footer.png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el header */
+    background-position: center; /* Centra la imagen */
+    height: 100px; /* Ajusta la altura del header */
+    background-color: #bfbee6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    text-align: center; 
+    
+}
+header h1 {
+    font-size: 50px;
+    color: #ffffff;
+    margin: 0;
+    
+    }
+
+header h2 {
+font-size: 30px;
+color: #bef2ff;
+margin: 0;
+}
+
+
+#nubeCanvas {
+    width: 1600px;
+    height: 800px;
+    border: 0px solid #ffffff;
+}
+header .logo {
+    max-width: 300px;
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+header .logo-right {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+}
+
+header .logo-center {
+    max-width: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+}
+
+main {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;    /* Centra verticalmente */
+  
+}
+
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+    header {
+        height: 80px; /* Reduce la altura del header */
+    }
+
+    header .logo, header .logo-right, header .logo-center {
+        max-width: 80%; /* Ajusta el tamaño de las imágenes */
+    }
+
+    header .logo-center {
+        max-width: 70%;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    header {
+        height: 60px; /* Reduce aún más la altura del header */
+    }
+
+    header .logo, header .logo-right, header .logo-center {
+        max-width: 60%; /* Ajusta el tamaño de las imágenes */
+    }
+
+    header .logo-center {
+        max-width: 50%;
+    }
+}
+
+.form-container, .form-container2, .form-container3 {
+    margin: 20px auto; /* Centrado horizontal y espacio arriba/abajo */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Esquinas redondeadas */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1100px; /* Define un ancho máximo para que no se estiren demasiado */
+    width: 100%; /* Hace que sea responsive dentro del max-width */
+    background-color: #fff; /* Opcional: fondo para visualizar el bloque */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar */
+}
+
+.form-container {
+    background-color: #17396a;
+}
+
+.form-container2 {
+    background-color:  #60cae1;
+}
+
+.form-container3 {
+    background-color: #eb2275;
+}
+
+.form-item {
+    text-align: center;
+    width: 200px;
+}
+
+.form-item .imagen-item {
+    max-width: 30%;
+    height: auto;
+    /* border: 2px solid #ccc; */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-item .imagen-item-blanco {
+    max-width: 30%;
+    height: auto;
+    /* border: 2px solid #ccc; */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.form-item .imagen-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo-categoria {
+    max-width: 300px; /* Ajusta el tamaño del logo de categoría */
+    height: auto;
+    margin-bottom: 10px; /* Espaciado inferior para separar del siguiente elemento */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.logo-categoria:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+}
+
+/* Color de texto para el primer contenedor */
+.form-container .form-item p {
+    color: #a1a9f1; /* Color específico para el primer container */
+}
+
+/* Color de texto para los demás contenedores */
+.form-container2 .form-item p,
+.form-container3 .form-item p {
+    color: #070e50; /* Color original para los otros contenedores */
+}
+
+footer {
+    /*background-image: url('header-footer.png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el footer */
+    background-position: center; /* Centra la imagen */
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    margin-top: auto; /* Asegura que el footer esté al final */
+}
+
+footer .footer-logo {
+    max-width: 500%;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+
+/* Media query para pantallas de hasta 768px */
+@media (max-width: 768px) {
+    footer .footer-logo {
+        max-width: 80%; /* Ajusta el tamaño de la imagen del footer */
+    }
+}
+
+/* Media query para pantallas más pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    footer .footer-logo {
+        max-width: 60%; /* Ajuste aún mayor para pantallas pequeñas */
+    }
+}
+
+.firma {
+    font-size: 10px;   /* Tamaño pequeño de fuente */
+    color: #8282f0;    /* Color azul */
+    text-align: right; /* Justificado a la derecha */
+    margin-right: 20px; /* Espaciado desde el borde derecho */
+}
+
+.firma a {
+    color: #8282f0;     /* Asegura que el enlace sea azul */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+}
+
+.firma a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
