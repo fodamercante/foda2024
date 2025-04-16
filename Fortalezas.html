@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FODA Hospital Mercante</title>
+    <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="logo_hospital.png" alt="Logo del Hospital" class="logo">
+        <br><br><br><br><br><br>
+        
+        <div>
+            <h1>Hospital Gdor. Domingo Mercante</h1>
+            <h2>FORTALEZAS</h2>
+        </div>
+        <img src="logo_provincia.png" alt="Logo de la Provincia de Buenos Aires" class="logo-right">
+    </header>
+
+    <main>
+
+        <div>
+        <canvas id="nubeCanvas" width="1800" height="1600"></canvas>
+        <div id="nubeEtiquetas">
+            <a href="#" data-weight="200" style="color:#007BFF">Equipo</a>
+<a href="#" data-weight="120" style="color:#00BFFF">Residencia</a>
+<a href="#" data-weight="110" style="color:#8A2BE2">Trabajo</a>
+<a href="#" data-weight="90" style="color:#FF69B4">Capacitación</a>
+<a href="#" data-weight="80" style="color:#00CED1">Profesionales</a>
+<a href="#" data-weight="70" style="color:#DA70D6">Compromiso</a>
+<a href="#" data-weight="60" style="color:#1E90FF">Servicios</a>
+<a href="#" data-weight="60" style="color:#FF1493">Comunicación</a>
+<a href="#" data-weight="60" style="color:#6A5ACD">Enfermería</a>
+<a href="#" data-weight="50" style="color:#20B2AA">Infraestructura</a>
+<a href="#" data-weight="50" style="color:#BA55D3">Formación</a>
+<a href="#" data-weight="40" style="color:#6495ED">Redes</a>
+<a href="#" data-weight="40" style="color:#FF69B4">Especialidades</a>
+<a href="#" data-weight="30" style="color:#00BFFF">Garantías</a>
+<a href="#" data-weight="30" style="color:#8A2BE2">Cirugías</a>
+<a href="#" data-weight="30" style="color:#FF1493">Modernización</a>
+<a href="#" data-weight="20" style="color:#00CED1">Derechos</a>
+<a href="#" data-weight="20" style="color:#DA70D6">Innovación</a>
+<a href="#" data-weight="20" style="color:#1E90FF">Seguridad</a>
+<a href="#" data-weight="20" style="color:#FF69B4">Docencia</a>
+<a href="#" data-weight="20" style="color:#6A5ACD">Empatía</a>
+<a href="#" data-weight="20" style="color:#20B2AA">Colaboración</a>
+<a href="#" data-weight="20" style="color:#BA55D3">Multidisciplinario</a>
+<a href="#" data-weight="20" style="color:#6495ED">Integración</a>
+<a href="#" data-weight="15" style="color:#007BFF">Personal</a>
+<a href="#" data-weight="15" style="color:#00BFFF">Potencial</a>
+<a href="#" data-weight="15" style="color:#8A2BE2">Funcionamiento</a>
+<a href="#" data-weight="15" style="color:#FF69B4">Atención</a>
+<a href="#" data-weight="15" style="color:#00CED1">Calidad</a>
+<a href="#" data-weight="15" style="color:#DA70D6">Resolución</a>
+<a href="#" data-weight="15" style="color:#1E90FF">Autogestión</a>
+<a href="#" data-weight="10" style="color:#FF1493">Flexibilidad</a>
+<a href="#" data-weight="10" style="color:#6A5ACD">Tecnología</a>
+<a href="#" data-weight="10" style="color:#20B2AA">Compromiso</a>
+<a href="#" data-weight="10" style="color:#BA55D3">Adaptabilidad</a>
+<a href="#" data-weight="10" style="color:#6495ED">Coordinación</a>
+<a href="#" data-weight="10" style="color:#007BFF">Liderazgo</a>
+
+        </div>
+
+    </div>
+
+    <script>
+    function iniciarNube() {
+        const canvas = document.getElementById("nubeCanvas");
+
+        if (!canvas || canvas.width === 0 || canvas.height === 0) {
+            setTimeout(iniciarNube, 100); // Reintenta hasta que el canvas esté listo
+            return;
+        }
+
+        try {
+            TagCanvas.Start("nubeCanvas", "nubeEtiquetas", {
+                textColour: null,
+                outlineColour: "#ffcc00",
+                reverse: true,
+                depth: 0.8,
+                maxSpeed: 0.05,
+                weight: true,
+                weightFrom: "data-weight", // Indica el atributo que define el peso
+                shape: "sphere",
+                zoom: 1.2,
+                shuffleTags: true
+            });
+        } catch (e) {
+            console.error("Error al iniciar TagCanvas: ", e);
+            alert("Error al iniciar TagCanvas: " + e.message);
+        }
+    }
+
+    window.onload = function() {
+        setTimeout(iniciarNube, 300); // Retrasa la inicialización para asegurar carga completa
+    };
+    </script>
+
+    </main>
+
+    <footer>
+        <img src="imagen_paisaje_footer_2024.png" alt="Logo de la Provincia de Buenos Aires" class="footer-logo">
+    </footer>
+
+    <a href="nube_f.png" target="_blank">
+        <img src="icono.png" alt="Logo de la Provincia de Buenos Aires" class="logo-fin">
+      </a>
+
+</body>
+</html>

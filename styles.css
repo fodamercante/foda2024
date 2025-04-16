@@ -226,3 +226,12 @@ footer .footer-logo {
 .firma a:hover {
     text-decoration: underline; /* Subrayado al pasar el mouse */
 }
+
+.logo-fin {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px; /* ajustá el tamaño a gusto */
+    opacity: 0.8; /* opcional, para que no distraiga mucho */
+  }
+  
